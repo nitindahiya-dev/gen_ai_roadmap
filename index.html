@@ -5,21 +5,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GenAI Roadmap</title>
     <link rel="stylesheet" href="styles.css">
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+            checkboxes.forEach(checkbox => {
+                const id = checkbox.parentElement.textContent.trim();
+                if (localStorage.getItem(id) === 'true') {
+                    checkbox.checked = true;
+                }
+                checkbox.addEventListener('change', function() {
+                    localStorage.setItem(id, this.checked);
+                });
+            });
+        });
+    </script>
 </head>
 <body>
     <div class="roadmap">
         <h1>GenAI Roadmap</h1>
         <div class="phase" id="phase1">
-            <h2>🚀 Phase 1: Foundations (Weeks 1–2)</h2>
+            <h2>
+                <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="12" y1="8" x2="12" y2="12"></line>
+                    <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                </svg>
+                Phase 1: Foundations (Weeks 1–2)
+            </h2>
             <ul>
-                <li><input type="checkbox"> Python refresher - Focus on understanding data types and control structures. 
+                <li><input type="checkbox" id="phase1-task1"><label for="phase1-task1"> Python refresher - Focus on understanding data types and control structures.</label>
                     <ul>
                         <li><em>Tip 1: Use online platforms like LeetCode for practice.</em></li>
                         <li><em>Tip 2: Write small scripts to automate daily tasks.</em></li>
                         <li><em>Tip 3: Join Python communities for support and resources.</em></li>
                     </ul>
                 </li>
-                <li><input type="checkbox"> Basic AI/ML concepts - Learn about model evaluation metrics. 
+                <li><input type="checkbox" id="phase1-task2"><label for="phase1-task2"> Basic AI/ML concepts - Learn about model evaluation metrics.</label>
                     <ul>
                         <li><em>Tip 1: Start with simple datasets like Iris or MNIST.</em></li>
                         <li><em>Tip 2: Visualize data to understand patterns.</em></li>
@@ -29,7 +50,14 @@
             </ul>
         </div>
         <div class="phase" id="phase2">
-            <h2>🔍 Phase 2: Meet the LLMs (Weeks 3–4)</h2>
+            <h2>
+                <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                    <line x1="9" y1="9" x2="15" y2="15"></line>
+                    <line x1="15" y1="9" x2="9" y2="15"></line>
+                </svg>
+                Phase 2: Meet the LLMs (Weeks 3–4)
+            </h2>
             <ul>
                 <li><input type="checkbox"> Explore major LLMs - Experiment with different prompt styles. 
                     <ul>
@@ -48,7 +76,12 @@
             </ul>
         </div>
         <div class="phase" id="phase3">
-            <h2>🛠 Phase 3: Build with Frameworks (Weeks 5–6)</h2>
+            <h2>
+                <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polygon points="12 2 2 22 22 22 12 2"></polygon>
+                </svg>
+                Phase 3: Build with Frameworks (Weeks 5–6)
+            </h2>
             <ul>
                 <li><input type="checkbox"> LangChain basics - Understand the concept of agents. 
                     <ul>
@@ -74,7 +107,13 @@
             </ul>
         </div>
         <div class="phase" id="phase4">
-            <h2>🌐 Phase 4: Data & Storage (Weeks 7–8)</h2>
+            <h2>
+                <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 16V8a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2z"></path>
+                    <polyline points="3 8 12 13 21 8"></polyline>
+                </svg>
+                Phase 4: Data & Storage (Weeks 7–8)
+            </h2>
             <ul>
                 <li><input type="checkbox"> Vector databases - Practice indexing and querying. 
                     <ul>
@@ -93,7 +132,13 @@
             </ul>
         </div>
         <div class="phase" id="phase5">
-            <h2>🤖 Phase 5: RAG & Chat over Docs (Weeks 9–10)</h2>
+            <h2>
+                <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 2a10 10 0 0 0-10 10h10V2z"></path>
+                    <path d="M22 12a10 10 0 0 0-10-10v10h10z"></path>
+                </svg>
+                Phase 5: RAG & Chat over Docs (Weeks 9–10)
+            </h2>
             <ul>
                 <li><input type="checkbox"> Retrieval-Augmented Generation (RAG) - Combine embeddings with LLMs. 
                     <ul>
@@ -112,7 +157,13 @@
             </ul>
         </div>
         <div class="phase" id="phase6">
-            <h2>🧠 Phase 6: Agentic Workflows & Memory (Weeks 11–12)</h2>
+            <h2>
+                <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 2a10 10 0 0 0-10 10h10V2z"></path>
+                    <path d="M22 12a10 10 0 0 0-10-10v10h10z"></path>
+                </svg>
+                Phase 6: Agentic Workflows & Memory (Weeks 11–12)
+            </h2>
             <ul>
                 <li><input type="checkbox"> AI agents - Develop agents that can perform tasks autonomously. 
                     <ul>
@@ -131,7 +182,13 @@
             </ul>
         </div>
         <div class="phase" id="phase7">
-            <h2>📊 Phase 7: Advanced Integrations (Weeks 13–14)</h2>
+            <h2>
+                <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 2a10 10 0 0 0-10 10h10V2z"></path>
+                    <path d="M22 12a10 10 0 0 0-10-10v10h10z"></path>
+                </svg>
+                Phase 7: Advanced Integrations (Weeks 13–14)
+            </h2>
             <ul>
                 <li><input type="checkbox"> Multi-modal LLM apps - Integrate text and image processing. 
                     <ul>
@@ -150,7 +207,13 @@
             </ul>
         </div>
         <div class="phase" id="phase8">
-            <h2>🔒 Phase 8: Security & Guardrails (Weeks 15–16)</h2>
+            <h2>
+                <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 2a10 10 0 0 0-10 10h10V2z"></path>
+                    <path d="M22 12a10 10 0 0 0-10-10v10h10z"></path>
+                </svg>
+                Phase 8: Security & Guardrails (Weeks 15–16)
+            </h2>
             <ul>
                 <li><input type="checkbox"> Prompt filtering - Ensure safe and appropriate content. 
                     <ul>
@@ -169,7 +232,13 @@
             </ul>
         </div>
         <div class="phase" id="phase9">
-            <h2>⚙️ Phase 9: Orchestration & Tooling (Weeks 17–18)</h2>
+            <h2>
+                <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 2a10 10 0 0 0-10 10h10V2z"></path>
+                    <path d="M22 12a10 10 0 0 0-10-10v10h10z"></path>
+                </svg>
+                Phase 9: Orchestration & Tooling (Weeks 17–18)
+            </h2>
             <ul>
                 <li><input type="checkbox"> LangGraph orchestration - Manage complex workflows. 
                     <ul>
@@ -195,7 +264,13 @@
             </ul>
         </div>
         <div class="phase" id="phase10">
-            <h2>🎯 Phase 10: Polishing & Fine-Tuning (Weeks 19–20)</h2>
+            <h2>
+                <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 2a10 10 0 0 0-10 10h10V2z"></path>
+                    <path d="M22 12a10 10 0 0 0-10-10v10h10z"></path>
+                </svg>
+                Phase 10: Polishing & Fine-Tuning (Weeks 19–20)
+            </h2>
             <ul>
                 <li><input type="checkbox"> LLM as judge - Evaluate model outputs. 
                     <ul>
@@ -221,7 +296,13 @@
             </ul>
         </div>
         <div class="phase" id="final-projects">
-            <h2>Final Projects</h2>
+            <h2>
+                <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 2l1.09 3.26L16 6l-2.18 1.74L12 11l-1.82-3.26L8 6l2.91-.74L12 2z"></path>
+                    <path d="M12 22l1.09-3.26L16 18l-2.18-1.74L12 13l-1.82 3.26L8 18l2.91.74L12 22z"></path>
+                </svg>
+                Final Projects
+            </h2>
             <ul>
                 <li>✅ <strong>AI-Powered Legal Document Assistant</strong>
                     <ul>

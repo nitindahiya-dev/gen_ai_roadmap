@@ -4,6 +4,10 @@ body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none" stroke="%23ffffff" stroke-width="0.5"><circle cx="50" cy="50" r="48"/></svg>');
+    background-size: 200px 200px;
+    background-repeat: repeat;
+    animation: backgroundMove 10s linear infinite;
 }
 
 .roadmap {
@@ -21,6 +25,7 @@ h1 {
     font-size: 2.5em;
     color: #00ffcc;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    animation: fadeIn 2s ease-in-out;
 }
 
 .phase {
@@ -43,6 +48,19 @@ h1 {
     margin-top: 0;
     color: #ffcc00;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+}
+
+.icon {
+    margin-right: 10px;
+    width: 24px;
+    height: 24px;
+    transition: transform 0.3s;
+}
+
+.icon:hover {
+    transform: rotate(20deg);
 }
 
 .phase ul {
@@ -78,4 +96,28 @@ h1 {
         opacity: 1;
         transform: translateY(0);
     }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes backgroundMove {
+    0% { background-position: 0 0; }
+    100% { background-position: 200px 200px; }
+}
+
+input[type="checkbox"]:checked + label {
+    text-decoration: line-through;
+    color: #888;
+    transition: color 0.3s, text-decoration 0.3s;
+}
+
+input[type="checkbox"] + label {
+    transition: color 0.3s, text-decoration 0.3s;
 } 
