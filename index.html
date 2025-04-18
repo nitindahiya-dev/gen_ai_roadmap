@@ -9,7 +9,7 @@
         document.addEventListener('DOMContentLoaded', function() {
             const checkboxes = document.querySelectorAll('input[type="checkbox"]');
             checkboxes.forEach(checkbox => {
-                const id = checkbox.parentElement.textContent.trim();
+                const id = checkbox.id;
                 if (localStorage.getItem(id) === 'true') {
                     checkbox.checked = true;
                 }
@@ -21,6 +21,16 @@
     </script>
 </head>
 <body>
+    <header class="header">
+        <div class="header-content">
+            <!-- <h1>GenAI Roadmap</h1> -->
+            <a href="https://github.com/nitindahiya-dev/gen_ai_roadmap" target="_blank" class="github-link">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="github-icon">
+                    <path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.11.82-.26.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.385-1.333-1.755-1.333-1.755-1.09-.745.083-.73.083-.73 1.205.085 1.84 1.24 1.84 1.24 1.07 1.835 2.805 1.305 3.49.998.108-.775.42-1.305.763-1.605-2.665-.305-5.466-1.335-5.466-5.93 0-1.31.47-2.38 1.235-3.22-.125-.305-.535-1.525.115-3.18 0 0 1.005-.32 3.3 1.23a11.52 11.52 0 0 1 3-.405c1.02.005 2.045.14 3 .405 2.28-1.55 3.285-1.23 3.285-1.23.655 1.655.245 2.875.12 3.18.77.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.43.37.815 1.1.815 2.22 0 1.605-.015 2.895-.015 3.285 0 .32.215.695.825.575C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12z"/>
+                </svg>
+            </a>
+        </div>
+    </header>
     <div class="roadmap">
         <h1>GenAI Roadmap</h1>
         <div class="phase" id="phase1">
@@ -59,14 +69,14 @@
                 Phase 2: Meet the LLMs (Weeks 3–4)
             </h2>
             <ul>
-                <li><input type="checkbox"> Explore major LLMs - Experiment with different prompt styles. 
+                <li><input type="checkbox" id="phase2-task1"><label for="phase2-task1"> Explore major LLMs - Experiment with different prompt styles.</label>
                     <ul>
                         <li><em>Tip 1: Compare outputs to understand model biases.</em></li>
                         <li><em>Tip 2: Use diverse prompts to test model capabilities.</em></li>
                         <li><em>Tip 3: Document your findings for future reference.</em></li>
                     </ul>
                 </li>
-                <li><input type="checkbox"> Hands-on with free/open models - Try fine-tuning a small model. 
+                <li><input type="checkbox" id="phase2-task2"><label for="phase2-task2"> Hands-on with free/open models - Try fine-tuning a small model.</label>
                     <ul>
                         <li><em>Tip 1: Use Google Colab for free GPU access.</em></li>
                         <li><em>Tip 2: Start with pre-trained models to save time.</em></li>
@@ -83,21 +93,21 @@
                 Phase 3: Build with Frameworks (Weeks 5–6)
             </h2>
             <ul>
-                <li><input type="checkbox"> LangChain basics - Understand the concept of agents. 
+                <li><input type="checkbox" id="phase3-task1"><label for="phase3-task1"> LangChain basics - Understand the concept of agents.</label>
                     <ul>
                         <li><em>Tip 1: Start with simple workflows.</em></li>
                         <li><em>Tip 2: Use visual tools to map out processes.</em></li>
                         <li><em>Tip 3: Collaborate with peers to share insights.</em></li>
                     </ul>
                 </li>
-                <li><input type="checkbox"> Hugging Face Transformers - Learn about tokenization. 
+                <li><input type="checkbox" id="phase3-task2"><label for="phase3-task2"> Hugging Face Transformers - Learn about tokenization.</label>
                     <ul>
                         <li><em>Tip 1: Use pre-trained models to save time.</em></li>
                         <li><em>Tip 2: Explore different tokenization techniques.</em></li>
                         <li><em>Tip 3: Join forums to discuss challenges and solutions.</em></li>
                     </ul>
                 </li>
-                <li><input type="checkbox"> LangGraph intro - Design a basic agentic workflow. 
+                <li><input type="checkbox" id="phase3-task3"><label for="phase3-task3"> LangGraph intro - Design a basic agentic workflow.</label>
                     <ul>
                         <li><em>Tip 1: Visualize your workflow for better understanding.</em></li>
                         <li><em>Tip 2: Use feedback loops to refine processes.</em></li>
@@ -115,14 +125,14 @@
                 Phase 4: Data & Storage (Weeks 7–8)
             </h2>
             <ul>
-                <li><input type="checkbox"> Vector databases - Practice indexing and querying. 
+                <li><input type="checkbox" id="phase4-task1"><label for="phase4-task1"> Vector databases - Practice indexing and querying.</label>
                     <ul>
                         <li><em>Tip 1: Use small datasets to start.</em></li>
                         <li><em>Tip 2: Experiment with different indexing strategies.</em></li>
                         <li><em>Tip 3: Monitor performance to optimize queries.</em></li>
                     </ul>
                 </li>
-                <li><input type="checkbox"> Graph databases - Model relationships effectively. 
+                <li><input type="checkbox" id="phase4-task2"><label for="phase4-task2"> Graph databases - Model relationships effectively.</label>
                     <ul>
                         <li><em>Tip 1: Use Neo4j's browser for interactive queries.</em></li>
                         <li><em>Tip 2: Visualize graphs to identify patterns.</em></li>
@@ -140,14 +150,14 @@
                 Phase 5: RAG & Chat over Docs (Weeks 9–10)
             </h2>
             <ul>
-                <li><input type="checkbox"> Retrieval-Augmented Generation (RAG) - Combine embeddings with LLMs. 
+                <li><input type="checkbox" id="phase5-task1"><label for="phase5-task1"> Retrieval-Augmented Generation (RAG) - Combine embeddings with LLMs.</label>
                     <ul>
                         <li><em>Tip 1: Use vector databases for efficient retrieval.</em></li>
                         <li><em>Tip 2: Test with various document types.</em></li>
                         <li><em>Tip 3: Optimize embeddings for better performance.</em></li>
                     </ul>
                 </li>
-                <li><input type="checkbox"> Context-aware chatbots - Implement memory for better interactions. 
+                <li><input type="checkbox" id="phase5-task2"><label for="phase5-task2"> Context-aware chatbots - Implement memory for better interactions.</label>
                     <ul>
                         <li><em>Tip 1: Use session storage for short-term memory.</em></li>
                         <li><em>Tip 2: Design chatbots to handle diverse queries.</em></li>
@@ -165,14 +175,14 @@
                 Phase 6: Agentic Workflows & Memory (Weeks 11–12)
             </h2>
             <ul>
-                <li><input type="checkbox"> AI agents - Develop agents that can perform tasks autonomously. 
+                <li><input type="checkbox" id="phase6-task1"><label for="phase6-task1"> AI agents - Develop agents that can perform tasks autonomously.</label>
                     <ul>
                         <li><em>Tip 1: Start with simple tasks and gradually increase complexity.</em></li>
                         <li><em>Tip 2: Use modular design for flexibility.</em></li>
                         <li><em>Tip 3: Test agents in controlled environments.</em></li>
                     </ul>
                 </li>
-                <li><input type="checkbox"> Agent memory - Persist context for long-term memory. 
+                <li><input type="checkbox" id="phase6-task2"><label for="phase6-task2"> Agent memory - Persist context for long-term memory.</label>
                     <ul>
                         <li><em>Tip 1: Use databases like Qdrant for efficient storage.</em></li>
                         <li><em>Tip 2: Implement memory management strategies.</em></li>
@@ -190,14 +200,14 @@
                 Phase 7: Advanced Integrations (Weeks 13–14)
             </h2>
             <ul>
-                <li><input type="checkbox"> Multi-modal LLM apps - Integrate text and image processing. 
+                <li><input type="checkbox" id="phase7-task1"><label for="phase7-task1"> Multi-modal LLM apps - Integrate text and image processing.</label>
                     <ul>
                         <li><em>Tip 1: Use APIs for seamless integration.</em></li>
                         <li><em>Tip 2: Test with diverse data types.</em></li>
                         <li><em>Tip 3: Optimize for performance and accuracy.</em></li>
                     </ul>
                 </li>
-                <li><input type="checkbox"> Document→Graph + embeddings - Automate document processing. 
+                <li><input type="checkbox" id="phase7-task2"><label for="phase7-task2"> Document→Graph + embeddings - Automate document processing.</label>
                     <ul>
                         <li><em>Tip 1: Use pre-built libraries to speed up development.</em></li>
                         <li><em>Tip 2: Validate data integrity regularly.</em></li>
@@ -215,14 +225,14 @@
                 Phase 8: Security & Guardrails (Weeks 15–16)
             </h2>
             <ul>
-                <li><input type="checkbox"> Prompt filtering - Ensure safe and appropriate content. 
+                <li><input type="checkbox" id="phase8-task1"><label for="phase8-task1"> Prompt filtering - Ensure safe and appropriate content.</label>
                     <ul>
                         <li><em>Tip 1: Implement regex filters for quick checks.</em></li>
                         <li><em>Tip 2: Regularly update filtering criteria.</em></li>
                         <li><em>Tip 3: Test filters with diverse inputs.</em></li>
                     </ul>
                 </li>
-                <li><input type="checkbox"> Bias control - Test and mitigate biases in outputs. 
+                <li><input type="checkbox" id="phase8-task2"><label for="phase8-task2"> Bias control - Test and mitigate biases in outputs.</label>
                     <ul>
                         <li><em>Tip 1: Use diverse datasets for training.</em></li>
                         <li><em>Tip 2: Implement bias detection tools.</em></li>
@@ -240,21 +250,21 @@
                 Phase 9: Orchestration & Tooling (Weeks 17–18)
             </h2>
             <ul>
-                <li><input type="checkbox"> LangGraph orchestration - Manage complex workflows. 
+                <li><input type="checkbox" id="phase9-task1"><label for="phase9-task1"> LangGraph orchestration - Manage complex workflows.</label>
                     <ul>
                         <li><em>Tip 1: Use visual tools for better management.</em></li>
                         <li><em>Tip 2: Implement checkpoints for error handling.</em></li>
                         <li><em>Tip 3: Regularly review and optimize workflows.</em></li>
                     </ul>
                 </li>
-                <li><input type="checkbox"> Human-in-the-Loop - Integrate human feedback. 
+                <li><input type="checkbox" id="phase9-task2"><label for="phase9-task2"> Human-in-the-Loop - Integrate human feedback.</label>
                     <ul>
                         <li><em>Tip 1: Use feedback loops to improve accuracy.</em></li>
                         <li><em>Tip 2: Design interfaces for easy feedback collection.</em></li>
                         <li><em>Tip 3: Analyze feedback to identify improvement areas.</em></li>
                     </ul>
                 </li>
-                <li><input type="checkbox"> Tool binding & calling - Connect to external tools. 
+                <li><input type="checkbox" id="phase9-task3"><label for="phase9-task3"> Tool binding & calling - Connect to external tools.</label>
                     <ul>
                         <li><em>Tip 1: Use APIs for easy integration.</em></li>
                         <li><em>Tip 2: Test connections with various tools.</em></li>
@@ -272,21 +282,21 @@
                 Phase 10: Polishing & Fine-Tuning (Weeks 19–20)
             </h2>
             <ul>
-                <li><input type="checkbox"> LLM as judge - Evaluate model outputs. 
+                <li><input type="checkbox" id="phase10-task1"><label for="phase10-task1"> LLM as judge - Evaluate model outputs.</label>
                     <ul>
                         <li><em>Tip 1: Use metrics like BLEU or ROUGE for evaluation.</em></li>
                         <li><em>Tip 2: Compare outputs with human judgments.</em></li>
                         <li><em>Tip 3: Regularly update evaluation criteria.</em></li>
                     </ul>
                 </li>
-                <li><input type="checkbox"> Fine-tune a model - Use domain-specific data. 
+                <li><input type="checkbox" id="phase10-task2"><label for="phase10-task2"> Fine-tune a model - Use domain-specific data.</label>
                     <ul>
                         <li><em>Tip 1: Start with small datasets to avoid overfitting.</em></li>
                         <li><em>Tip 2: Experiment with different learning rates.</em></li>
                         <li><em>Tip 3: Monitor training progress closely.</em></li>
                     </ul>
                 </li>
-                <li><input type="checkbox"> Deploy & monitor - Ensure scalability and reliability. 
+                <li><input type="checkbox" id="phase10-task3"><label for="phase10-task3"> Deploy & monitor - Ensure scalability and reliability.</label>
                     <ul>
                         <li><em>Tip 1: Use Docker for containerization.</em></li>
                         <li><em>Tip 2: Implement monitoring tools for real-time insights.</em></li>
